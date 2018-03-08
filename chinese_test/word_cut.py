@@ -8,14 +8,6 @@ import sys
 import codecs
 import jieba
 
-'''
-import pyltp
-LTP_DATA_DIR='/lustre/atlas/zhanghui/data/ltp_data/ltp_data_v3.4.0'
-cws_model_path=os.path.join(LTP_DATA_DIR, 'cws.model')
-segmentor = pyltp.Segmentor()
-segmentor.load(cws_model_path)
-'''
-
 if __name__ == '__main__':
 
    # python 2/3 compatibility
@@ -36,12 +28,6 @@ if __name__ == '__main__':
        # jieba 
        cuts = list(jieba.cut(l))
        print(cuts)
-'''
-       # ltp
-       cuts = segmentor.segment(l)
-       print(cuts)
-'''
-
        fout.write(' '.join(cuts))
 
    fobj.close()
